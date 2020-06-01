@@ -1,5 +1,7 @@
 package snackBarApp;
 
+import java.lang.reflect.Array;
+
 import snackBarApp.Snack;
 import snackBarApp.VendingMachine;
 
@@ -63,7 +65,98 @@ public class Main {
         bob.buySnacks(pretzel.getTotalCost(3));
         System.out.println("Customer 2 cash on hand $" + bob.getCashOnHand());
         System.out.println("Quantity of snack 3 is " + pretzel.getQuantity() +"\n");
+
+
+        // STRETCH
+        System.out.println("Stretch Goals\n");
+
+        // vending machine list
+        VendingMachine[] vendingMachineList ;
+        vendingMachineList = new VendingMachine[3];
+        vendingMachineList[0] = food;
+        vendingMachineList[1] = drink;
+        vendingMachineList[2] = office;
+
+        String vendingMachineName = "";  
+        int vendingMachineId;
+
+        // Chips
+        Snack snack = chips;
+        // Get Chips Vending Machine Name
+        vendingMachineId = snack.getVendingMachineId();
+        for (int i = 0; i < vendingMachineList.length; i++) {
+            if(vendingMachineList[i].getId() == vendingMachineId) {
+                vendingMachineName = vendingMachineList[i].getName();
+            }
+        }
+
+        System.out.println("Snack: " + snack.getName());
+        System.out.println("Vending Machine: " + vendingMachineName);
+        System.out.println("Quantity: " + snack.getQuantity());
+        System.out.println("Vending Machine: " + snack.toDollarFormat(snack.getTotalCost(snack.getQuantity())) +"\n");
+
+        // Chocolate Bar
+        snack = chocolateBar;
+        // Get Chocolate Bar Vending Machine Name
+        vendingMachineId = chocolateBar.getVendingMachineId();
+        for (int i = 0; i < vendingMachineList.length; i++) {
+            if(vendingMachineList[i].getId() == vendingMachineId) {
+                vendingMachineName = vendingMachineList[i].getName();
+            }
+        }
+
+        System.out.println("Snack: " + snack.getName());
+        System.out.println("Vending Machine: " + vendingMachineName);
+        System.out.println("Quantity: " + snack.getQuantity());
+        System.out.println("Vending Machine: " + snack.toDollarFormat(snack.getTotalCost(snack.getQuantity())) +"\n");
+
+        // Pretzel
+        snack = pretzel;
+        // Get Pretzel Vending Machine Name
+        vendingMachineId = snack.getVendingMachineId();
+        for (int i = 0; i < vendingMachineList.length; i++) {
+            if(vendingMachineList[i].getId() == vendingMachineId) {
+                vendingMachineName = vendingMachineList[i].getName();
+            }
+        }
+
+        System.out.println("Snack: " + snack.getName());
+        System.out.println("Vending Machine: " + vendingMachineName);
+        System.out.println("Quantity: " + snack.getQuantity());
+        System.out.println("Vending Machine: " + snack.toDollarFormat(snack.getTotalCost(snack.getQuantity())) +"\n");
+
+        // Soda
+        snack = soda;
+        // Get Soda Vending Machine Name
+        vendingMachineId = snack.getVendingMachineId();
+        for (int i = 0; i < vendingMachineList.length; i++) {
+            if(vendingMachineList[i].getId() == vendingMachineId) {
+                vendingMachineName = vendingMachineList[i].getName();
+            }
+        }
+
+        System.out.println("Snack: " + snack.getName());
+        System.out.println("Vending Machine: " + vendingMachineName);
+        System.out.println("Quantity: " + snack.getQuantity());
+        System.out.println("Vending Machine: " + snack.toDollarFormat(snack.getTotalCost(snack.getQuantity())) +"\n");
+
+        // Water
+        snack = water;
+        // Get Water Vending Machine Name
+        vendingMachineId = snack.getVendingMachineId();
+        for (int i = 0; i < vendingMachineList.length; i++) {
+            if(vendingMachineList[i].getId() == vendingMachineId) {
+                vendingMachineName = vendingMachineList[i].getName();
+            }
+        }
+
+        System.out.println("Snack: " + snack.getName());
+        System.out.println("Vending Machine: " + vendingMachineName);
+        System.out.println("Quantity: " + snack.getQuantity());
+        System.out.println("Vending Machine: " + snack.toDollarFormat(snack.getTotalCost(snack.getQuantity())) +"\n");
+
     }
+
     public static void main(String[] args) {
         snackBar();
     }

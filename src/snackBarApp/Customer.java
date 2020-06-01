@@ -1,5 +1,7 @@
 package snackBarApp;
 
+import java.text.DecimalFormat;
+
 public class Customer {
     private static int maxId = 0;
     private int id;
@@ -33,5 +35,11 @@ public class Customer {
     }
     public void buySnacks(double totalCost) {
         this.cashOnHand -= totalCost;
+    }
+
+    // other methods
+    public String toDollarFormat(double dollar) {
+        DecimalFormat formatter = new DecimalFormat("#,###.00");
+        return "$" + formatter.format(dollar);
     }
 }

@@ -1,5 +1,7 @@
 package snackBarApp;
 
+import java.text.DecimalFormat;
+
 public class Snack {
 
     private static int maxId = 0;
@@ -53,7 +55,11 @@ public class Snack {
     public void quantityBought(int quantityToSubtract) {
         this.quantity -= quantityToSubtract;
     }
-    public double getTotalCost(int quantity){
+    public double getTotalCost(int quantity) {
         return quantity * cost;
+    }
+    public String toDollarFormat(double dollar) {
+        DecimalFormat formatter = new DecimalFormat("#,###.00");
+        return "$" + formatter.format(dollar);
     }
 }
